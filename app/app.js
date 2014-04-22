@@ -1,9 +1,3 @@
-/**
-* Upmost application layer
-*
-* @class app
-*/
-
 define([
     "angular"
     ,"app/controllers/index"
@@ -22,13 +16,11 @@ define([
     $this.run(["$rootScope", function ($rootScope) {
 
         /**
-        * Alternative to AngularJS' standard apply().
-        * Useful for when there's a lot of applying going on, prevents errors.
-        *
-        * @method safeApply
-        * @param {Function} fn The callback function that will be passed to apply()
-        */
-
+         * Alternative to AngularJS' standard apply().
+         * Useful for when there's a lot of applying going on, prevents errors.
+         *
+         * @param  {Function} fn The function passed to apply()
+         */
         $scope.safeApply = function(fn) {
             var phase = this.$root.$$phase;
             if(phase == '$apply' || phase == '$digest') {
