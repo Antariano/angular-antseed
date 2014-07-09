@@ -1,0 +1,47 @@
+.locations-map {
+    background: url('../img/location-map.png') center center no-repeat;
+    min-height: 245px;
+    background-size: contain;
+
+    .location-marker {
+        position: absolute;
+    }
+}
+
+.location-marker {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    .transition(all .3s);
+
+    &.highlight {
+        .scale(1.75, 1.75);
+        z-index: 100;
+    }
+}
+
+.location-marker-red {
+    background: #cc2f10;
+}
+
+.location-marker-purple {
+    background: #ee2cf0;
+}
+
+.location-marker-blue {
+    background: #10abcc;
+}
+
+.location-marker-green {
+    background: #0be639;
+}
+
+.location-marker-yellow {
+    background: #ccc110;
+}
+
+.location-marker-blue {
+    background: #e69b0b;
+}

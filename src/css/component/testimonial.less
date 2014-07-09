@@ -1,0 +1,71 @@
+.our-mission {
+    margin-bottom: @testimonial-margin;
+    margin-top: 4em;
+
+    blockquote {
+        background: @testimonial-quote-background;
+        color: @testimonial-quote-color;
+        padding: @testimonial-quote-padding;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 300;
+        margin: 0;
+        position: relative;
+
+        p {
+            position: relative;
+            z-index: 5;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: @testimonial-quote-arrow-size;
+            height: @testimonial-quote-arrow-size;
+            .rotate(45deg);
+            position: absolute;
+            bottom: -@testimonial-quote-arrow-size / 2;
+            left: 50%;
+            margin-left: -@testimonial-quote-arrow-size / 2;
+            background: @testimonial-quote-background;
+        }
+    }
+
+    h3 {
+        color: #444;
+        font-size: @testimonial-title-font-size;
+        font-weight: @testimonial-title-font-weight;
+        margin: 0;
+        line-height: @testimonial-title-font-size * 0.70;
+        letter-spacing: -5px;
+
+        span {
+            color: #84b915;
+        }
+    }
+
+    .author {
+        margin-top: @testimonial-author-margin;
+        text-align: center;
+        color: @testimonial-author-color;
+        font-size: @testimonial-author-size;
+        display: block;
+
+        span {
+            color: #84b915;
+        }
+    }
+}
+
+.profile-list {
+    text-align: center;
+
+    .profile {
+        margin: @mission-list-spacing / 2;
+        display: inline-block;
+        width: @mission-list-size;
+        height: @mission-list-size;
+        background: @mission-list-background;
+        background-size: cover;
+    }
+}

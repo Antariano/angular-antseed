@@ -1,0 +1,231 @@
+.button-variant(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    .transition(all 0.3s);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open .dropdown-toggle {
+        color: @color !important;
+        background-color: lighten(@background, 5%) !important;
+        border-color: lighten(@border, 5%) !important;
+    }
+    &:active,
+    &.active,
+    .open .dropdown-toggle & {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: @background;
+        }
+    }
+
+    .badge {
+        color: @background;
+        background-color: @color;
+    }
+}
+
+.button-variant-b(@color; @background; @border) {
+    color: @color;
+    background-color: darken(@background, 2%);
+    border: 1px solid @border;
+    .transition(all 0.3s);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open .dropdown-toggle & {
+        color: @color;
+        background-color: darken(@background, 20%);
+        border-color: darken(@border, 20%);
+    }
+    &:active,
+    &.active,
+    .open .dropdown-toggle & {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: @background;
+        }
+    }
+
+    .badge {
+        color: @background;
+        background-color: @color;
+    }
+}
+
+/**
+ * FIllED BUTTONS
+ */
+
+.btn-default-filled {
+    .button-variant-b(#333; @btn-default-color; lighten(@btn-default-color, 4%));
+}
+
+.btn-primary-filled {
+    .button-variant-b(#333; @btn-primary-color; lighten(@btn-primary-color, 4%));
+}
+
+// Success appears as green
+.btn-success-filled {
+    .button-variant-b(#fff; @btn-success-color; lighten(@btn-success-color, 4%));
+}
+
+// Info appears as blue-green
+.btn-info-filled {
+    .button-variant-b(#333; @btn-info-color; lighten(@btn-info-color, 4%));
+}
+
+// Warning appears as orange
+.btn-warning-filled {
+    .button-variant-b(#333; @btn-warning-color; lighten(@btn-warning-color, 4%));
+}
+
+// Danger and error appear as red
+.btn-danger-filled {
+    .button-variant-b(#fff; @btn-danger-color; lighten(@btn-danger-color, 4%));
+}
+
+/**
+ * BORDERED BUTTONS
+ */
+
+.btn-default-bordered {
+    .button-variant(@btn-default-color; @btn-default-bg; @btn-default-color);
+}
+
+.btn-primary-bordered {
+    .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-color);
+}
+
+// Success appears as green
+.btn-success-bordered {
+    .button-variant(@btn-success-color; @btn-success-bg; @btn-success-color);
+}
+
+// Info appears as blue-green
+.btn-info-bordered {
+    .button-variant(@btn-info-color; @btn-info-bg; @btn-info-color);
+}
+
+// Warning appears as orange
+.btn-warning-bordered {
+    .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-color);
+}
+
+// Danger and error appear as red
+.btn-danger-bordered {
+    .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-color);
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+@media (max-width: @screen-sm-min) {
+    .text-right-sm {
+        text-align: right;
+    }
+
+    .text-center-sm {
+        text-align: center;
+    }
+
+    .text-left-sm {
+        text-align: left;
+    }
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 300;
+}
+
+.form-control-focus(@color: @input-border-focus) {
+    @color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+    &:focus {
+        border-color: darken(@color, 5%);
+        .box-shadow(none);
+    }
+}
+
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+    .list-unstyled();
+    margin-left: -5px;
+
+    > li {
+        display: inline-block;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.text-muted {
+    color: @text-muted;
+}
+
+.text-primary {
+    .text-emphasis-variant(@brand-primary);
+}
+
+.text-success {
+    .text-emphasis-variant(@state-success-text);
+}
+
+.text-info {
+    .text-emphasis-variant(@state-info-text);
+}
+
+.text-warning {
+    .text-emphasis-variant(@state-warning-text);
+}
+
+.text-danger {
+    .text-emphasis-variant(@state-danger-text);
+}
+
+.tab-content {
+    background-color: #0d0d0d;
+    border: 1px solid #333333;
+    border-top: none;
+    padding: 15px;
+}

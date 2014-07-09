@@ -1,0 +1,136 @@
+@feature-bgc: #161616;
+
+.feature-container {
+    padding: 2em (@grid-gutter-width / 2) 6em;
+}
+
+.feature {
+    margin: 0 0 @feature-spacing;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    position: relative;
+
+    &:before {
+        #gradient.horizontal-three-colors(@body-bg; @footer-primary; 50%; @body-bg);
+        height: 1px;
+        background-repeat: no-repeat;
+        bottom: 0;
+        content: "";
+        display: block;
+        left: 0;
+        right: 0;
+    }
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 30px;
+        right: 30px;
+        bottom: 50%;
+        display: block;
+        content: "";
+        box-shadow: 0 0 30px #b7ff2a;
+        border-radius: 33%;
+        z-index: -1;
+        opacity: 0;
+
+        .transition(opacity 0.3s);
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .header {
+            background: url(../img/feature_back_hd.png) top center @feature-bgc;
+            background-size: 353px 273px;
+        }
+    }
+
+    .header {
+        background: url(../img/feature_back_n.png) top center @feature-bgc no-repeat;
+        color: #fff;
+        font-size: @feature-header-font-size;
+        line-height: @feature-header-font-size + (@feature-padding * 2);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 1em auto;
+            text-align: center;
+            display: block;
+        }
+        .modpack {
+            background: url(../svg/wrench.svg);
+            background-size: 60px 60px;
+        }
+        .protection {
+            background: url(../svg/shield.svg);
+            background-size: 60px 60px;
+        }
+        .uptime {
+            background: url(../svg/link.svg);
+            background-size: 60px 60px;
+        }
+        .latency {
+            background: url(../svg/server.svg);
+            background-size: 60px 60px;
+        }
+        .storage {
+            background: url(../svg/storage.svg);
+            background-size: 60px 60px;
+        }
+        .support {
+            background: url(../svg/support.svg);
+            background-size: 60px 60px;
+        }
+    }
+
+    .body {
+        background-color: @feature-bgc;
+        color: @feature-main-color;
+        font-size: @feature-main-font-size;
+        padding: @feature-padding;
+
+        p:first-child {
+            margin: 0;
+        }
+    }
+
+    .flair {
+        right: @feature-flare-size * 3;
+        top: -@feature-flare-cover;
+        .rotate(@feature-flair-rotation);
+
+        &, &:after, &:before {
+            position: absolute;
+            background: @feature-flair-color;
+            width: @feature-flare-size;
+            height: @feature-header-font-size + (2 * @feature-padding) + (2 * @feature-flare-cover);
+        }
+
+        &:before, &:after {
+            top: 0;
+            bottom: 0;
+            content: "";
+            display: block;
+        }
+
+        &:before {
+            left: -@feature-flare-size * 2;
+        }
+
+        &:after {
+            right: -@feature-flare-size * 2;
+        }
+    }
+}
