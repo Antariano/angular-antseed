@@ -1,6 +1,6 @@
 require([
     "angular",
-    "app"
+    "app/app"
 ],
 function (angular, app) {
 
